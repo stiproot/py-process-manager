@@ -6,16 +6,31 @@ from multiprocessing import JoinableQueue, Process
 from process_metadata_service import ProcessMetadataService
 
 
+class ProcessManager:
+    def __init__(self, cmd_processor: CmdProcessor, cmd_provider: CmdProvider):
+        self._queue = JoinableQueue()
+        pass
+
+    def start(self):
+        pass
+
+    def stop(self):
+        pass
+
+    def join(self):
+        pass
+
+
 def message_worker(queue, cmd_processor: CmdProcessor):
     while True:
         pid = ProcessMetadataService().pid()
         print(f"message_worker() / pid:{pid}")
-        message = queue.get()
-        print(f"Processing message {message}")
-        if message is None:
+        msg = queue.get()
+        if msg is None:
             break
-        cmd = ProcessCmd()
-        cmd_processor.process(cmd)
+        # cmd = ProcessCmd()
+        print(f"Processing message {msg.idempotency_id}")
+        cmd_processor.process(msg)
         queue.task_done()
 
 
@@ -34,6 +49,7 @@ def main():
         consumer.start()
 
     workers = []
+
     for _ in range(num_consumers):
         worker = Process(target=message_worker, args=(queue, cmd_processor))
         workers.append(worker)
