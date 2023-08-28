@@ -1,8 +1,6 @@
 from setuptools import setup, find_packages
 
-# import os
-
-# metadata
+# metadata...
 name = "pyxi_process_manager"
 description = "A simple process manager in python."
 author = "Simon Stipcich"
@@ -10,17 +8,17 @@ author_email = "stipcich.simon@gmail.com"
 url = "https://github.com/stiproot/py-process-manager"
 license = "MIT"
 keywords = ["python", "package", "process", "beta"]
-version = "0.0.2"
+version = "0.0.3"
 
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
-# dependencies
+# dependencies...
 install_requires = [
     "environs",
 ]
 
-# setup
+# setup...
 setup(
     packages=find_packages("src"),
     name=name,

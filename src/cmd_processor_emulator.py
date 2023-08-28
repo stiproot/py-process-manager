@@ -6,10 +6,11 @@ from cmd_processor import CmdProcessor
 
 class CmdProcessorEmulator(CmdProcessor):
     def process(self, cmd: ProcessCmd) -> None:
+        proc_meta_srv = ProcessMetadataService()
         print(
             "process()",
             "start",
-            f"pid:{ProcessMetadataService().pid()}",
+            f"pid:{proc_meta_srv.pid()}",
             f"cmd:{cmd.idempotency_id}",
         )
 
@@ -18,6 +19,6 @@ class CmdProcessorEmulator(CmdProcessor):
         print(
             "process()",
             "end",
-            f"pid:{ProcessMetadataService().pid()}",
+            f"pid:{proc_meta_srv.pid()}",
             f"cmd:{cmd.idempotency_id}",
         )

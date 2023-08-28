@@ -1,10 +1,5 @@
-from typing import Optional
-from cmd_processor import CmdProcessor
-from process_cmd import ProcessCmd
-from cmd_provider import CmdProvider, CmdProviderManager
-from kafka_consumer_emulator import KafkaConsumerEmulator
+from cmd_provider_manager import CmdProviderManager
 from multiprocessing import JoinableQueue, Process
-from process_metadata_service import ProcessMetadataService
 from cmd_processor_manager import CmdProcessorManager
 from process_configuration import ProcessConfiguration
 
@@ -44,25 +39,3 @@ class ProcessManager:
 
         for worker in workers:
             worker.join()
-
-
-def main():
-    num_consumers = 2
-
-    config = ProcessConfiguration(
-        num_worker_processes=num_consumers, num_cmd_provider_processes=num_consumers
-    )
-    queue = JoinableQueue()
-    cmd_processor = CmdProcessor()
-    cmd_provider = KafkaConsumerEmulator()
-    cmd_provider_manager = CmdProviderManager(cmd_provider, queue)
-    cmd_processor_manager = CmdProcessorManager(cmd_processor, queue)
-
-    process_manager = ProcessManager(
-        config, cmd_processor_manager, cmd_provider_manager
-    )
-    process_manager.manage()
-
-
-if __name__ == "__main__":
-    main()

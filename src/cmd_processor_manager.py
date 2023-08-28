@@ -12,7 +12,5 @@ class CmdProcessorManager:
             msg = self._queue.get()
             if msg is None:
                 break
-
-            print(f"Processing message {msg.idempotency_id}")
             self._cmd_processor.process(msg)
             self._queue.task_done()
