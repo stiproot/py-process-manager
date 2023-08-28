@@ -10,7 +10,7 @@ author_email = "stipcich.simon@gmail.com"
 url = "https://github.com/stiproot/py-process-manager"
 license = "MIT"
 keywords = ["python", "package", "process", "beta"]
-version = "0.0.1"
+version = "0.0.2"
 
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
