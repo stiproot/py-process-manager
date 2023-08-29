@@ -1,10 +1,10 @@
 from multiprocessing import JoinableQueue
-from cmd_provider_manager import CmdProviderManager
-from cmd_processor_manager import CmdProcessorManager
-from process_manager import ProcessManager
-from process_configuration import ProcessConfiguration
-from cmd_processor_emulator import CmdProcessorEmulator
-from cmd_provider_emulator import CmdProviderEmulator
+from pyxi_process_manager.cmd_provider_manager import CmdProviderManager
+from pyxi_process_manager.cmd_processor_manager import CmdProcessorManager
+from pyxi_process_manager.process_manager import ProcessManager
+from pyxi_process_manager.process_configuration import ProcessConfiguration
+from pyxi_process_manager.cmd_processor_emulator import CmdProcessorEmulator
+from pyxi_process_manager.cmd_provider_emulator import CmdProviderEmulator
 
 
 def main():

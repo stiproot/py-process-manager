@@ -8,7 +8,7 @@ author_email = "stipcich.simon@gmail.com"
 url = "https://github.com/stiproot/py-process-manager"
 license = "MIT"
 keywords = ["python", "package", "process", "beta"]
-version = "0.0.3"
+version = "0.0.4"
 
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
@@ -20,9 +20,10 @@ install_requires = [
 
 # setup...
 setup(
-    packages=find_packages("src"),
     name=name,
     version=version,
+    packages=find_packages(where="src"),
+    package_dir={"pyxi_process_manager": "src/pyxi_process_manager"},
     description=description,
     long_description=long_description,
     long_description_content_type="text/markdown",
