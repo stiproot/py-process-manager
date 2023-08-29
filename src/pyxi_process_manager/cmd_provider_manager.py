@@ -1,5 +1,5 @@
 from multiprocessing import JoinableQueue
-from cmd_provider import CmdProvider
+from .cmd_provider import CmdProvider
 
 
 class CmdProviderManager:

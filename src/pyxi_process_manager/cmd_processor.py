@@ -1,4 +1,4 @@
-from process_cmd import ProcessCmd
+from .process_cmd import ProcessCmd
 
 
 class CmdProcessor:

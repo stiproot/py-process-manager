@@ -1,7 +1,7 @@
-from cmd_provider_manager import CmdProviderManager
 from multiprocessing import JoinableQueue, Process
-from cmd_processor_manager import CmdProcessorManager
-from process_configuration import ProcessConfiguration
+from .cmd_provider_manager import CmdProviderManager
+from .cmd_processor_manager import CmdProcessorManager
+from .process_configuration import ProcessConfiguration
 
 
 class ProcessManager:

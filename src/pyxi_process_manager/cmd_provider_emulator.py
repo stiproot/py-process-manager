@@ -1,5 +1,5 @@
-from process_cmd import ProcessCmd
-from cmd_provider import CmdProvider
+from .process_cmd import ProcessCmd
+from .cmd_provider import CmdProvider
 
 
 class CmdProviderEmulator(CmdProvider):

@@ -1,7 +1,7 @@
 import time
-from process_cmd import ProcessCmd
-from process_metadata_service import ProcessMetadataService
-from cmd_processor import CmdProcessor
+from .process_cmd import ProcessCmd
+from .process_metadata_service import ProcessMetadataService
+from .cmd_processor import CmdProcessor
 
 
 class CmdProcessorEmulator(CmdProcessor):

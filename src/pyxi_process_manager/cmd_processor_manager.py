@@ -1,5 +1,5 @@
-from cmd_processor import CmdProcessor
 from multiprocessing import JoinableQueue
+from .cmd_processor import CmdProcessor
 
 
 class CmdProcessorManager:
