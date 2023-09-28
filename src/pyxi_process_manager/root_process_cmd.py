@@ -1,4 +1,4 @@
-class RootCmd:
+class RootProcessCmd:
     def __init__(
         self,
         cmd_data: dict,
